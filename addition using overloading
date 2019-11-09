@@ -1,0 +1,28 @@
+package add;
+
+import java.util.Scanner;
+
+public class Add {
+    public int sum(int a , int b){
+    return a+b;
+    }
+    public int sum( int a, int b ,int c){
+        return a+b+c;
+    }
+    public int sum(int a,float b){
+        return (int) (a+b);
+    }
+    public int sum(float a , float b){
+        return (int) (a+b);
+    }
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        Add obj = new Add();
+        System.out.println("enter two or thre vlaue");
+        int a = input.nextInt();
+        int b= input.nextInt();
+        int c = input.nextInt();
+        System.out.println("summ of two parameter"+(obj.sum(a,b)));
+        System.out.println("sum of thre parameter"+(obj.sum(a,b,c)));
+    }
+}
