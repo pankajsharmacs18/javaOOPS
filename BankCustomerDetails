@@ -1,0 +1,65 @@
+package bankCustomerDetails;
+
+import java.util.Scanner;
+
+public class BankCustomerDetails {
+
+    private long accNO;
+    private String name,email;
+    private float amount;
+
+    public float getAmount(float amount) {
+        return this.amount;
+    }
+
+    public long getAccNO(long accNO) {
+        return this.accNO;
+    }
+
+    public String getEmail(String email) {
+        return this.email;
+    }
+
+    public String getName(String name) {
+        return this.name;
+    }
+
+    public void setAccNO(long accNO) {
+        this.accNO = accNO;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        BankCustomerDetails obj = new BankCustomerDetails();
+        System.out.println("Enter email ");
+        String email = input.nextLine();
+        System.out.println("enter name");
+        String name = input.nextLine();
+        System.out.println("Enter Accno ");
+        long accNO = input.nextInt();
+        System.out.println("enter ammount");
+        float amount = input.nextInt();
+        obj.setAccNO(accNO);
+        obj.setAmount(amount);
+        obj.setEmail(email);
+        obj.setName(name);
+        System.out.println("Costomer detilas");
+        System.out.println(obj.getAccNO(accNO));
+        System.out.println(obj.getAmount(amount));
+        System.out.println(obj.getName(name));
+        System.out.println(obj.getEmail(email));
+
+    }
+}
+
