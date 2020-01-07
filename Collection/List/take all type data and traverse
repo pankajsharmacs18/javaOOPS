@@ -1,0 +1,38 @@
+package collection;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+public class Collection {
+    List lst = new ArrayList() ;
+    public void add(int range) {
+        System.out.println("enter name of student ");
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i <=range ; i++) {
+
+            lst.add(input.nextLine());
+        }
+
+    }
+    public void display() {
+        System.out.println(lst);
+
+    }
+
+
+
+    public static void main(String args[])
+    {
+        System.out.println("Enter range");
+        Scanner input = new Scanner(System.in);
+        int range = input.nextInt();
+        Collection obj = new Collection();
+        obj.add(range);
+        obj.display();
+
+        }
+
+    }
+
