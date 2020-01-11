@@ -1,0 +1,21 @@
+package perriDeFormate;
+
+public class PerriDeFormate {
+    public void perriFormate(){
+
+        System.out.println("perri DE Formate no are there : ");
+        int i=0;
+        while (i<=1000){
+            long value = (long) (Math.pow(Math.pow(2,2),i)+1);
+            System.out.print(" : "+value);
+            i++;
+            if(value>=Integer.MAX_VALUE)
+        break;
+        }
+    }
+    public static void main(String args[]){
+
+        PerriDeFormate obj = new PerriDeFormate();
+        obj.perriFormate();
+    }
+}
