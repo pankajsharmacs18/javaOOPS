@@ -1,0 +1,64 @@
+package mersennePrimes;
+
+import java.util.Scanner;
+
+public class MersennePrimes {
+    public void findPrime(int range,int arr[]){
+        int k=0;
+            for (int i = 1; ;i++ ) {
+                int count =0;
+                for (int j = 2; j < i; j++) {
+                    if(i%j==0){
+                        count++;
+
+                    }
+
+                }
+                if(count==0){
+                    arr[k]=i;
+                    k=k+1;
+                }
+                if(k==range){
+                    break;
+                }
+        }
+        System.out.println("choose prime Arrays is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+
+    }
+
+    public void mersennePrimesCheck(int arr[]){
+
+        System.out.println("mersenneNo no is ");
+        for (int i = 0; i <arr.length ; i++) {
+            int counter=0;
+            long mersenneNo = (long) (Math.pow(2,arr[i])-1);
+            System.out.println();
+        for (int j = 2; j <mersenneNo ; j++) {
+            if (mersenneNo%j==0)
+            {
+                counter++;
+            }
+            }
+            if (counter==0){
+                System.out.print(arr[i]+" ");
+
+
+            }
+
+        }
+
+    }
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter limit of prime to be store in arrasy ");
+        int range=input.nextInt();
+
+        int arr[]= new int[range];
+        MersennePrimes obj = new MersennePrimes();
+        obj.findPrime(range,arr);
+        obj.mersennePrimesCheck(arr);
+    }
+}
