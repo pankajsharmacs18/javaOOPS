@@ -1,0 +1,42 @@
+package conscSquirePrime;
+
+import java.util.Scanner;
+
+public class SqurePrime {
+    public void arraysInitize(int arr[]){
+        for (int i = 0; i <arr.length ; i++) {
+                arr[i]= (int) Math.pow((i+1),2);
+        }
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+
+        }
+    }
+    public void checkPrimeBetweenPaire(int arr[]){
+        for (int i = 0; i <arr.length; i++) {
+            for (int j = arr[i]; j <arr[i+1] ; j++) {
+                int count  =0;
+                for (int k = 2; k < j; k++) {
+                    if(j%k==0){
+                        count++;
+
+                    }
+
+                }
+                if(count==0){
+                    System.out.println(arr[i]+" < "+j+" > "+arr[i+1]);
+                    break;
+                }
+            }
+        }
+    }
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter rage of arrasys ");
+            int range = input.nextInt();
+        int arr[] = new int[range];
+        SqurePrime obj = new SqurePrime();
+        obj.arraysInitize(arr);
+        obj.checkPrimeBetweenPaire(arr);
+    }
+}
