@@ -1,0 +1,45 @@
+package prime;
+
+import java.util.Scanner;
+
+public class Prime {
+    int k=0;
+    public void prime(int range,int arr[]){
+        System.out.println(" prime no is range : "+1+" from : "+(range));
+        for (int i = 1; i <=range ; i++) {
+            int check=1;
+            int count =0;
+            for (int j = 1; j <i ; j++) {
+                if(i%j==0){
+                    count=count+1;
+                }
+                }
+            if (count == 1) {
+                arr[k]=i;
+                k++;
+                System.out.print(": "+i);
+
+
+            }
+
+        }
+        System.out.println(" twin prime no");
+        for (int i = 0; i <=k ; i++) {
+            if(arr[i+1]-arr[i]==2){
+                System.out.println("( "+arr[i]+" , "+(arr[i+1])+")");
+            }
+        }
+
+              }
+
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter range ");
+        int range = input.nextInt();
+        Prime obj = new Prime();
+        int arr[]=new int[range/2];
+        obj.prime(range,arr);
+
+
+    }
+}
