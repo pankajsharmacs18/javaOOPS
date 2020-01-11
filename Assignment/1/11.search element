@@ -1,0 +1,31 @@
+11.
+package sequentialArraySearch;
+
+public class ArraysSearch {
+    public void inputArrays(int arr[]){
+        for (int i = 0; i < 500; i++) {
+            arr[i]=i;
+        }
+        System.out.println("input arrys is :");
+        for (int i = 0; i <500 ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+    public void searchElement( int arr[]){
+        int searchValue = 22;
+        System.out.println("\n");
+        for (int i = 0; i <500 ; i++) {
+            if (arr[i]==searchValue){
+                System.out.println("values :"+searchValue+" at postion: "+(i+1));
+                break;
+            }
+        }
+    }
+    public static void main(String args[]){
+
+        int arr[] = new int[500];
+        ArraysSearch obj = new ArraysSearch();
+        obj.inputArrays(arr);
+    obj.searchElement(arr);
+    }
+}
