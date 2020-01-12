@@ -1,0 +1,31 @@
+package ppa;
+
+import java.util.Scanner;
+
+public class poalinidrm {
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ente limit of number to print :");
+        int limit =input.nextInt();
+        int n, b, rev = 0;
+
+        System.out.print("Palindrome numbers from 1 to :"+limit+"\n");
+        for (int i = 1; i <= limit; i++)
+        {
+            n = i;
+            while (n > 0)
+            {
+                b = n % 10;
+                rev = rev * 10 + b;
+                n = n / 10;
+            }
+            if (rev == i)
+            {
+                System.out.print(i + " ");
+            }
+            rev = 0;
+        }
+
+    }
+}
