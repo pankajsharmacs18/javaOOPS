@@ -1,0 +1,59 @@
+package bInarySearch;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BinarySearch {
+    Scanner input =new Scanner(System.in);
+    public void arraysInput(int arr[]){
+        System.out.println("Enter arrays ");
+        for (int i = 0; i <arr.length ; i++) {
+            arr[i]=input.nextInt();
+        }
+        System.out.println("entered arrays is  :");
+        for (int i = 0; i <arr.length; i++) {
+            System.out.print(arr[i]+" ");
+
+        }
+
+
+    }
+    public void  search (int value , int arr[]) {
+        Arrays.sort(arr);
+        System.out.println("Shorted arrays is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+        int pos = 0;
+        int end = arr.length - 1;
+        int mi = (pos + end) / 2;
+        while (pos <= end) {
+            if (arr[mi] == value) {
+                System.out.print("values at present : "+mi);
+                break;
+            }
+            else if (arr[mi] < value)
+            {
+                pos = mi + 1;
+            } else
+                {
+                end = mi - 1;
+
+            }
+            mi = (end + pos) / 2;
+        }
+    }
+    public static void main(String args[]){
+        Scanner  input = new Scanner(System.in);
+        System.out.println("ENTER ARRAYYS LENGTH ");
+        int length=input.nextInt();
+        int arr[]=new int[length];
+        System.out.println("Enter elemrnt to be search ");
+        int value = input.nextInt();
+        BinarySearch obj= new BinarySearch();
+        obj.arraysInput(arr);
+       obj.search(value,arr);
+
+    }
+}
