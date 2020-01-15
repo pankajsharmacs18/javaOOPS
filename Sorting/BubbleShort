@@ -1,0 +1,114 @@
+package bubbleShort;
+
+import java.util.Scanner;
+
+interface sortoprations{
+    public abstract void simpleBubbleShort(int arr[]);
+    public void method2(int arr[]);
+    public void sortUsingFlag(int arr[]);
+}
+class BubbleShort implements sortoprations{
+
+Scanner input =new Scanner(System.in);
+    @Override
+    public void simpleBubbleShort(int[] arr) {
+
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j = 0; j <arr.length -1; j++) {
+                if(arr[j]>arr[j+1]){
+                        int temp =arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                }
+
+            }
+
+        }
+
+        System.out.println("Shotest arrays is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+
+    @Override
+    public void method2(int[] arr) {
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j = 0; j <arr.length -i-1; j++) {
+                if(arr[j]>arr[j+1]){
+                    int temp =arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+
+            }
+
+        }
+
+        System.out.println("Shotest  arrays  using 2nd is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+
+
+    }
+
+    @Override
+    public void sortUsingFlag(int[] arr) {
+        for (int i = 0; i <arr.length ; i++) {
+            int flag=0;
+            for (int j = 0; j <arr.length -i-1; j++) {
+                if(arr[j]>arr[j+1]){
+                    int temp =arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                    flag=1;
+                }
+
+            }
+            if (flag==0){
+                break;
+            }
+
+        }
+
+        System.out.println("Shotest arrays using 3rd methode is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+
+
+
+    }
+    public void inputArrays(int arr[]){
+        System.out.println("enter element of arrys ");
+        for (int i = 0; i <arr.length ; i++) {
+            arr[i]=input.nextInt();
+
+        }
+        System.out.println("Enter Arrays is :");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        };
+    }
+    public static void main(String args[]){
+
+        Scanner input =new Scanner(System.in);
+        System.out.println("Enter length");
+        int length =input.nextInt();
+        int arr[]=new int[length];
+        BubbleShort obj = new BubbleShort();
+        obj.inputArrays(arr);
+        System.out.println("Enter enter choice \n");
+        System.out.println("instructions id \n sort simple : 1\n sort using i var : 2 \n using flag variable :3");
+        int choice = input.nextInt();
+        if (choice==1) {
+            obj.simpleBubbleShort(arr);
+        }
+        else if (choice==2){
+        obj.method2(arr);
+    }
+        else
+            obj.sortUsingFlag(arr);
+    }
+}
