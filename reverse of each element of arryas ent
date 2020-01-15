@@ -1,0 +1,65 @@
+package dsLabs;
+
+import java.util.Scanner;
+interface arraysOparions {
+ 
+    public abstract void reverse(int arr[]);
+
+
+}
+class Arrays implements arraysOparions{
+    Scanner input = new Scanner(System.in);
+    public void inputArrays(int arr[]){
+        System.out.println("enter element ");
+        for (int i = 0; i <arr.length ; i++) {
+            arr[i]=input.nextInt();
+        }
+        System.out.println("input arrys is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+
+        }
+    }
+
+
+        System.out.println("even arrsys is:");{
+            for (int i = 0; i <evenArrays.length ; i++) {
+                System.out.print(evenArrays[i]+" ");
+            }
+        }
+    }
+
+    @Override
+    public void reverse(int[] arr) {
+        int[] revArrays = new int[arr.length];
+        for (int i = 0; i <arr.length ; i++) {
+            int rem=0;
+            int rev=0;
+            while (arr[i]!=0){
+                rem =arr[i]%10;
+              rev=(rev*10)+rem;
+              arr[i]=arr[i]/10;
+
+            }
+            revArrays[i]=rev;
+
+
+        }
+        System.out.println("reverse arrays is :");
+        for (int i = 0; i <revArrays.length ; i++) {
+            System.out.print(revArrays[i]+" ");
+        }
+
+    }
+
+    public static void main(String args[]){
+            Scanner input = new Scanner(System.in);
+            System.out.println("Enter length ");
+            int length = input.nextInt();
+            int arr[] = new int[length];
+            Arrays obj=new Arrays();
+           obj.inputArrays(arr);
+           obj.reverse(arr);
+         //  obj.even(arr);
+        }
+}
