@@ -1,0 +1,22 @@
+package noOfChar;
+import java.lang.*;
+import java.util.Scanner;
+
+public class CountChar {
+    public  static void count(StringBuilder str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i)!=' '){
+                count =count+1;
+
+        }
+    }
+        System.out.print("Char present in String : "+count);
+    }
+    public static void main(String... pankajSharma){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter some string ");
+        StringBuilder str = new StringBuilder(input.nextLine());
+count(str);
+    }
+}
