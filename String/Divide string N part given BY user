@@ -1,0 +1,38 @@
+package stringDivide;
+
+import java.util.Scanner;
+
+public class StringDivde {
+    public void charCount(StringBuilder string){
+        int cout =0;
+        for (int i = 0; i <string.length() ; i++) {
+            if(string.charAt(i)!=' '){
+                cout=cout+1;
+            }
+            
+        }
+    }
+    public void stringDivide(StringBuilder string, int part){
+        System.out.println("String part is :");
+        int partlenth=string.length()/part;
+        for (int i = 0; i <string.length() ; i++) {
+            StringBuilder stringPart = new StringBuilder();
+            for (int j = 0; j <partlenth ; j++) {
+                stringPart.append(string.charAt(i));
+                i=i+1;
+                
+            }
+            System.out.print(stringPart+"  ");
+        }
+    }
+    public static void main(String... pankajSharm){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter String ");
+        StringBuilder string  = new StringBuilder(input.nextLine());
+        System.out.println("HOW MANY PART  WANT TO BE DIVIDED ");
+        int part = input.nextInt();
+        StringDivde obj= new StringDivde();
+        obj.charCount(string);
+        obj.stringDivide(string,part);
+    }
+}
