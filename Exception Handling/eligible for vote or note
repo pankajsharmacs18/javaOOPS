@@ -1,0 +1,23 @@
+package exceptionpract;
+
+import java.util.Scanner;
+
+class excPract {
+    Scanner input = new Scanner(System.in);
+    public void voteagecheker() {
+        System.out.println("Enter age of voter ");
+        int age = input.nextInt();
+        if (age < 18) {
+            throw new ArithmeticException("NOT VALID FOR");
+        }
+        else{
+            System.out.println("Eligible for vote ");
+        }
+    }
+
+    public static void main(String... pankajSharma){
+
+        excPract obj =new excPract();
+        obj.voteagecheker();
+    }
+}
