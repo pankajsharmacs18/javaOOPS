@@ -1,0 +1,32 @@
+package cpract;
+import java.lang.*;
+import java.util.Scanner;
+
+public class Cparact {
+   
+public void nPattern(int length){
+    for (int i = 0; i <=length ; i++) {
+        for (int j = 0; j <=length ; j++) {
+            if(j==0||j==i||j==length){
+                System.out.print("*");
+            }
+            else{
+                System.out.print(" ");
+            }
+
+        }
+        System.out.println();
+    }
+}
+    public static void main(String... pankajSharma )  {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Plase enter length of charecter");
+        int length = input.nextInt();
+        Cparact obj = new Cparact();
+     
+        obj.nPattern(length);
+    }
+
+    }
+
+
