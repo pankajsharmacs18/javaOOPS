@@ -1,0 +1,59 @@
+package hackerank;
+
+import java.security.PublicKey;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Hack<arr> {
+    Scanner input = new Scanner(System.in);
+    public void inputArrays(Integer[] arr){
+        System.out.println("enter  elemrnt of aarys :");
+        for (int i = 0; i <arr.length ; i++) {
+             arr[i] =input.nextInt();
+        }
+        System.out.println("enter arrays is|:");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+        Arrays.sort(arr, Collections.reverseOrder());
+        System.out.println("shorted arrys is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+    public void pandulamArgument(Integer[] arr){
+        int mid=0;
+        if(arr.length%2==0){
+            mid =(arr.length)/2;
+        }
+        else {
+        mid =(arr.length)/2;
+        }
+        for (int i = 0; i <arr.length ; i++) {
+            if(i==mid){
+                int temp =arr[mid];
+                arr[mid]=arr[arr.length-1];
+                arr[arr.length-1]=temp;
+
+            }
+        }
+Arrays.sort(arr,mid+1,arr.length-1);
+        System.out.println("pandulam argument is :");
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.print(arr[i]+" ");
+
+        }
+        }
+
+    public static void main(String... pankaj){
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter elength of arrys ");
+        int length = input.nextInt();
+    Integer arr[]= new Integer[length];
+    Hack obj = new Hack();
+    obj.inputArrays(arr);
+    obj.pandulamArgument(arr);
+    }
+}
