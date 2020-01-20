@@ -1,0 +1,48 @@
+package matrix;
+
+import java.util.Scanner;
+
+public class Matrix {
+    Scanner input =new Scanner(System.in);
+    public void inputMatrix(String matrix[][],int row,int column){
+        System.out.println("enter elemtent of matrix :");
+        for (int i = 0; i <row ; i++) {
+            for (int j = 0; j <column ; j++) {
+                if(i==2&j==1||i==2&&j==2||i==2&&j==3||i==2&&j==4||i==2&&j==8||i==2&&j==9||i==2&&j==10||i==2&&j==13||i==2&&j==17||i==2&&j==19||i==2&&j==23
+                        ||i==2&&j==25||i==2&&j==26||i==2&&j==29||i==2&&j==30||i==2&&j==31||i==3&&j==1||i==3&&j==5||i==3&&j==7||i==3&&j==11||i==3&&j==13||i==3&&j==17
+                        ||i==3&&j==19||i==3&&j==22||i==3&&j==24||i==3&&j==27||i==3&&j==30||i==4&&j==1||i==4&&j==5||i==4&&j==7||i==4&&j==11||i==4&&j==13||i==4&&j==14
+                        ||i==4&&j==17||i==4&&j==19||i==4&&j==21||i==4&&j==24||i==4&&j==27||i==4&&j==30||i==5&&j==1||i==5&&j==4||i==5&&j==7||i==5&&j==11||i==5&&j==11
+                        ||i==5&&j==13||i==5&&j==15||i==5&&j==17||i==5&&j==19||i==5&&j==20||i==5&&j==24||i==5&&j==27||i==5&&j==30||i==6&&j==1||i==6&&j==2||i==6&&j==3
+                        ||i==6&&j==7||i==6&&j==8||i==6&&j==9||i==6&&j==10||i==6&&j==11||i==6&&j==13||i==6&&j==15||i==6&&j==17||i==6&&j==20||i==6&&j==24||i==6&&j==25
+                        ||i==6&&j==26||i==6&&j==27||i==6&&j==30||i==7&&j==1||i==7&&j==7||i==7&&j==11||i==7&&j==13||i==7&&j==16||i==7&&j==17||i==7&&j==19||i==7&&j==20
+                        ||i==7&&j==24||i==7&&j==27||i==7&&j==30||i==8&&j==1||i==8&&j==7||i==8&&j==11||i==8&&j==13||i==8&&j==16||i==8&&j==17||i==8&&j==19||i==8&&j==22
+                        ||i==8&&j==24||i==8&&j==27||i==8&&j==28||i==8&&j==30||i==9&&j==1||i==9&&j==7||i==9&&j==11||i==9&&j==13||i==9&&j==17||i==9&&j==19||i==9&&j==23
+                        ||i==9&&j==25||i==9&&j==27||i==9&&j==28||i==9&&j==29||i==9&&j==30)
+                {
+                    matrix[i][j]="#";
+                }
+                else{
+                    matrix[i][j]=" ";
+                }
+            }
+        }
+        System.out.println("matrix is :");
+        for (int i = 0; i <row ; i++) {
+            for (int j = 0; j <column ; j++) {
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String args[]){
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter row of matrix :");
+        int row =input.nextInt();
+        System.out.println("enter column :");
+        int coloumn  =input.nextInt();
+        String matrix[][]=new String[row][coloumn];
+        Matrix obj =new Matrix();
+        obj.inputMatrix(matrix,row,coloumn);
+    }
+}
