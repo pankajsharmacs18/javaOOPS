@@ -1,0 +1,32 @@
+package dslab;
+
+import java.util.Scanner;
+
+public class TowerOfHonoi {
+    int count =0;
+    public void towerOfHonoi(int disk,String sourse,String temp ,String destination){
+                count=count+1;
+        if (disk==1){
+            System.out.println("Disk moved :"+count+" "+sourse+" to :"+destination);
+
+        }
+        else {
+            towerOfHonoi(disk-1,sourse,destination,temp);
+            System.out.println("Disk moved :"+sourse+" to :"+destination);
+            towerOfHonoi(disk-1,temp,sourse,destination);
+        }
+    }
+    public static void main(String... pankajSharma){
+        Scanner input =new Scanner(System.in);
+        System.out.println("enter no of disk ");
+        int disk =input.nextInt();
+        System.out.println("source toweer ");
+        String sourse =input.next();
+        System.out.println("enter desitnation towert name");
+        String destination =input.next();
+        System.out.println("enter temparoty tower");
+        String temp =input.next();
+        TowerOfHonoi obj=new TowerOfHonoi();
+        obj.towerOfHonoi(disk,sourse,temp,destination);
+    }
+}
