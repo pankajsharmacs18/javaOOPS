@@ -1,0 +1,27 @@
+package subset;
+
+import java.util.Scanner;
+
+public class SubSet {
+    public void subset(String str ){
+        System.out.println("all sub suset in sreing is :"+str);
+        for (int i = 0; i <str.length() ; i++)
+        {
+            for (int j = i+1; j <str.length() ; j++)
+            {
+                System.out.println(str.substring(i,j));
+            }
+        }
+    }
+    public static void main(String... PankajSharma)
+    {
+
+        Scanner input=new Scanner(System.in);
+        SubSet obj = new SubSet();
+        System.out.println("enter string to be calclulete subset ");
+        String Str =input.next();
+        obj.subset(Str);
+
+
+    }
+}
