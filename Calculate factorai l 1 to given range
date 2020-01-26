@@ -1,0 +1,28 @@
+package factorial;
+
+import java.util.Scanner;
+interface fatorialCal{
+    void factCalc(int range);
+}
+public class Factorial implements fatorialCal {
+    @Override
+    public void factCalc(int range) {
+          long fact=1;
+        for (int i = 1; i <=range ; i++) {
+            fact=fact*i;
+            System.out.println("foctorail is :"+i+" is = "+fact );
+        }
+
+    }
+    public static void main(String args[]){
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("enter range to be calculate factorqaol :");
+        int range = input.nextInt();
+        Factorial obj =new Factorial();
+        obj.factCalc(range);
+
+    }
+
+
+}
