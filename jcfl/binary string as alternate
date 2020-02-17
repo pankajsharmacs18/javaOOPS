@@ -1,0 +1,64 @@
+package hackerrank;
+
+import java.util.Scanner;
+
+public class StringInput {
+    int n1=0,n0=0;
+    String str="";
+    public void countWord(StringBuilder str)
+    {
+        for (int i = 0; i <str.length() ; i++) {
+            if(str.charAt(i)=='0')
+            {
+                n0++;
+            }
+            else
+                {
+                    n1++;
+                }
+
+        }
+        System.out.print(" 0 occure at : "+n0+" time ");
+        System.out.println("1 occure : "+n1);
+        System.out.println("total length is :"+str.length()+"  "+(int)(n0+n1));
+    }
+    public void pattern(int ocr1,int ocr0)
+    {
+
+        while (n1>=0||n0>=0)
+        {
+            int i=0;
+            while (n0>=0&&i<ocr0)
+            {
+                str=str+"0";
+                i++;
+            }
+            i=0;
+            while (n1>=0&&i<ocr1)
+            {
+                str=str+"1";
+            i++;
+
+
+            }
+            n0=n0-ocr0;
+            n1=n1-ocr1;
+        }
+        System.out.println(" ===  "+str);
+
+    }
+    public static void main(String... PankajSharma)
+    {
+        StringInput obj=new StringInput();
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter string : ");
+        StringBuilder str=new StringBuilder(input.nextLine());
+        System.out.println("enter 1 occurence :");
+        int ocr1=input.nextInt();
+        System.out.println("enter 0 occrence :");
+        int ocr0=input.nextInt();
+        System.out.println(str);
+        obj.countWord(str);
+        obj.pattern(ocr1,ocr0);
+    }
+}
