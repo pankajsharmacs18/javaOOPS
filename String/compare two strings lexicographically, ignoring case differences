@@ -1,0 +1,51 @@
+package str;
+
+import java.util.Scanner;
+
+class  StringImplement
+{
+   public void ligixcally(String str1,String str2)
+   {
+       int count=0;
+       if(str1.length()==str2.length())
+       {
+           for (int i = 0; i <str1.length() ; i++)
+           {
+           if(str1.toUpperCase().charAt(i)==str2.toUpperCase().charAt(i))
+           {
+               count++;
+           }
+           else
+               {
+                   break;
+               }
+           }
+       }
+       else
+           {
+               System.out.println("not loxically :" );
+           }
+       if(count==str1.length())
+       {
+           System.out.println("str is logixacally :");
+       }
+       else
+           {
+               System.out.println("string is not loxically : ");
+           }
+   }
+}
+public class StringMain {
+    public static void main(String... PankajSharma)
+    {
+        StringImplement obj=new StringImplement();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter 1st string is :");
+        String str=sc.nextLine();
+       
+        System.out.println("enter string is :"+str);
+        String str0=sc.nextLine();
+        System.out.println("secoung string is :"+str0);
+        obj.ligixcally(str,str0);
+    }
+}
