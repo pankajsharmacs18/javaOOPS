@@ -1,0 +1,33 @@
+package str;
+
+import java.util.Scanner;
+
+class  StringImplement
+{
+   public void ligixcally(StringBuilder str1,StringBuilder str2)
+   {
+       int res=str.compareTO(str2);
+       if(res==0)
+       {
+       System.out.println("string is lexically ");
+       }
+       else
+       {
+       System.out.println("string is not lexically :");
+       }
+}
+public class StringMain {
+    public static void main(String... PankajSharma)
+    {
+        StringImplement obj=new StringImplement();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter 1st string is :");
+        String str=sc.nextLine();
+        StringBuilder str1=new StringBuilder(str);
+        System.out.println("enter string is :"+str1);
+        String str0=sc.nextLine();
+        StringBuilder str2=new StringBuilder(str0);
+        System.out.println(str2);
+        obj.ligixcally(str1,str2);
+    }
+}
