@@ -1,0 +1,35 @@
+package str;
+import java.lang.*;
+import java.util.Scanner;
+
+class  StringImplement
+{
+   public void patternChech(String str,String pat)
+   {
+
+       String str1=str.substring(str.length()-pat.length(),str.length());
+       if(str1.equals(pat))
+       {
+           System.out.println("END WITH GIVEN PATTERN ");
+       }
+       else
+           {
+               System.out.println(" Not ");
+       }
+
+}
+}
+public class StringMain {
+    public static void main(String... PankajSharma)
+    {
+        StringImplement obj=new StringImplement();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter 1st string is :");
+        String str=sc.nextLine();
+
+        System.out.println("enter string is :"+str+" \n enter pattern to be search : ");
+        String str0=sc.nextLine();
+        System.out.println("secoung pattern is :"+str0);
+        obj.patternChech(str,str0);
+    }
+}
