@@ -1,0 +1,34 @@
+package alphaPattern;
+
+class CharImplement {
+    public void patternA(int length)
+    { int range=length*2;
+        int mid=range/2-1;
+        int mid1=range/2+1;
+        for (int i = 0; i < range; i++)
+        {      mid++;
+                mid1--;
+            for (int j = 0; j < range; j++)
+            {
+                if( j==mid||j==mid1||i==length/2&&i<j&&j<=mid)
+                {
+                    System.out.print("*");
+                }
+                else
+                    {
+                        System.out.print(" ");
+                    }
+            }
+            System.out.println();
+        }
+    }
+}
+public class AlphaMain
+{
+    public static void main(String... PankajSharma)
+    {
+        CharImplement obj=new CharImplement();
+        obj.patternA(10);
+        System.out.println("pankaj sharma :");
+    }
+}
