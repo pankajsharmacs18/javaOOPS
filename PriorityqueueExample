@@ -1,0 +1,93 @@
+package queRev;
+
+import java.util.Scanner;
+
+class Element
+{
+    int data;
+    int priority;
+    Element(int data,int priority)
+    {
+        this.data=data;
+        this.priority=priority;
+    }
+}
+class QueEMMpli
+{
+    Element[] arr;
+    int rear;
+    int front;
+    int i;
+    QueEMMpli(int size)
+    {
+        arr=new Element[size];
+        rear=-1;
+        front=-1;
+    }
+    public boolean isFull()
+    {
+        return rear==arr.length+1;
+    }
+    public boolean isEmpty()
+    {
+        return front==-1;
+    }
+    public void insertValue(int value ,int priority)
+    {
+        if(isFull())
+        {
+            System.out.println(" Over flow can't insert New element  : ");
+            return;
+        }
+        Element newValue=new Element(value,priority);
+        if(isEmpty())
+        {
+            front=0;
+            rear++;
+            arr[rear]=newValue;
+        }
+        else
+            {
+                for ( i = rear; i>=front ; i--)
+                {
+                if(arr[i].priority>newValue.priority)
+                {
+                    arr[i+1]=arr[i];
+                }
+                else
+                    {
+                        break;
+                    }
+                }
+                arr[i+1]=newValue;
+                rear++;
+            }
+    }
+    public void display()
+    {
+        for (int j = 0; j <arr.length ; j++)
+        {
+            System.out.println(arr[j].data+"   "+arr[j].priority);
+        }
+    }
+}
+public class QueueMain
+{
+    public static void main(String... PankajSharma)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enetr new size of arrsys : ");
+        int size=sc.nextInt();
+        QueEMMpli obj=new QueEMMpli(size);
+        for (int i = 0; i <size ; i++)
+        {
+            System.out.println("Enter value to inserted : ");
+            int value=sc.nextInt();
+            System.out.println("enter priority of that value  : ");
+            int pri=sc.nextInt();
+            obj.insertValue(value,pri);
+        }
+        obj.display();
+        System.out.println(" Pankaj sharma : ");
+    }
+}
