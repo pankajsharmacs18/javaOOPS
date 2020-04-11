@@ -1,0 +1,48 @@
+package stringPract;
+
+import java.util.Scanner;
+class StringImpleMent
+{
+    int length = 0;
+
+    public int calLength(StringBuilder str)
+    {
+        try {
+            for (int i = 0; ; i++) {
+                str.charAt(i);
+                length++;
+            }
+        } catch (Exception e)
+        {
+        }
+       return length;
+}
+
+    public void getElement(StringBuilder str,int position )
+{
+    if( position<=calLength(str))
+    {
+        int i =0;
+        for ( i = 0; i <position-1 ; i++)
+        {
+        }
+        System.out.println(str.charAt(i));
+        return;
+    }
+    else {
+    System.out.println("Enter wrong input  : ");
+}
+}
+}
+public class StringMain {
+    public static void main(String... PankajSharma)
+    {
+        StringImpleMent obj=new StringImpleMent();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter String : ");
+        StringBuilder str=new StringBuilder(sc.nextLine());
+        System.out.println("Enter index to accesss charecter   : ");
+        int ind=sc.nextInt();
+        obj.getElement(str,ind);
+    }
+}
