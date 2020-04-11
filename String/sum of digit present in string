@@ -1,0 +1,31 @@
+package stringPract;
+
+import java.util.*;
+
+class StringImpleMent
+{
+public void sumOFdigit(StringBuilder str)
+{
+    int sum=0;
+    for (int i = 0; i <str.length() ; i++)
+    {
+    if(Character.isDigit(str.charAt(i)))
+    {
+        String temp=new String(str.substring(i,i+1));
+        sum=sum+Integer.parseInt(temp);
+    }
+    }
+    System.out.println("sumis : "+sum);
+}
+
+}
+public class StringMain {
+    public static void main(String... PankajSharma)
+    {
+        StringImpleMent obj=new StringImpleMent();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter String : ");
+        StringBuilder str=new StringBuilder(sc.nextLine());
+        obj.sumOFdigit(str);
+    }
+}
