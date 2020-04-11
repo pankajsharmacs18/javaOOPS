@@ -1,0 +1,36 @@
+package stringPract;
+
+import java.util.*;
+
+class StringImpleMent
+{
+    public void getUnicode(StringBuilder str,int index)
+    {
+       if(index>=str.length())
+       {
+           System.out.println("Enter index is OutOfBound : ");
+           return;
+       }
+       int i=0;
+        for ( i = 0; i <=index ; i++)
+        {
+        }
+        System.out.println(Character.getNumericValue(str.charAt(i)));
+
+    }
+}
+public class StringMain
+{
+    public static void main(String... PankajSharma)
+    {
+        Scanner sc=new Scanner(System.in);
+        StringImpleMent obj=new StringImpleMent();
+        System.out.println("ener string  : ");
+        StringBuilder str=new StringBuilder(sc.nextLine());
+        System.out.println("ener index of chrecter to acesss ");
+        int index= sc.nextInt();
+        obj.getUnicode(str,index);
+        System.out.println("pankaj sharma : ");
+
+    }
+}
