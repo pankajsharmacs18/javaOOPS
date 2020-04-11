@@ -1,0 +1,32 @@
+package stringPract;
+
+import java.util.*;
+
+class StringImpleMent
+{
+public void RemoverCharecter(StringBuilder str,char ch) {
+    StringBuilder tempStr = new StringBuilder();
+
+    for (int i = 0; i < str.length(); i++)
+    {
+        if(str.charAt(i)!=ch)
+        {
+            tempStr.append(str.charAt(i));
+        }
+    }
+    System.out.println(tempStr);
+
+}
+}
+public class StringMain {
+    public static void main(String... PankajSharma)
+    {
+        StringImpleMent obj=new StringImpleMent();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter String : ");
+        StringBuilder str=new StringBuilder(sc.nextLine());
+        System.out.println("ener charecter to remove  :");
+        char chrt=sc.next().charAt(0);
+        obj.removeCharecter(str,chrt);
+    }
+}
