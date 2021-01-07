@@ -1,0 +1,37 @@
+package stringPractice;
+
+import java.util.Scanner;
+class StringImple
+{
+
+    public void  IndexofAlphabet(String str)
+    {
+        System.out.println("Char  "+"Index");
+        for (int i = (int)'a'; i < (int)'z'; i++)
+        {
+            if(str.contains(Character.toString((char)i))) {
+                System.out.println((char) i + "      " + str.indexOf((char) i));
+            }
+        }
+        for (int i = (int)'Z'; i < (int)'Z'; i++)
+        {
+            if(str.contains(Character.toString((char)i))) {
+            System.out.println((char)i+"  "+str.indexOf(i) );
+
+        }}
+
+    }
+}
+public class StringMain
+{
+    public static void main(String... PankajSharma)
+    {
+        StringImple  obj=new StringImple();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter String : ");
+        String str=sc.nextLine();
+        System.out.println("Entered String is : "+str);
+        obj.IndexofAlphabet(str);
+        System.out.println("Pankaj Sharma");
+    }
+}
